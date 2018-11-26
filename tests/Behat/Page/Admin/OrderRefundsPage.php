@@ -121,11 +121,7 @@ final class OrderRefundsPage extends SymfonyPage implements OrderRefundsPageInte
             return false;
         }
 
-        if ($optionField->getText() != $paymentMethodName) {
-            return false;
-        }
-
-        return true;
+        return $optionField->getText() === $paymentMethodName;
     }
 
     protected function getDefinedElements(): array
